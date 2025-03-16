@@ -1,0 +1,45 @@
+{
+    "scene_description": "**The scene depicts a small village with cobblestone streets and thatched-roof houses. The terrain can be divided into four parts:**\n    1. **Cobblestone Streets**: Uneven, stone-paved roads.\n    2. **Thatched-Roof Houses**: Small, quaint homes with straw roofs.\n    3. **Village Green**: A flat, grassy area in the center of the village.\n    4. **Wooden Fences**: Low, wooden barriers around the houses.",
+    "tool_calls": [
+        {
+            "id": "01959dc4c73ab4769a3ad1a497273354",
+            "type": "function",
+            "function": {
+                "name": "flat_ground_terrain",
+                "arguments": "{\"terrain\": \"init_terrain\", \"height\": 0.3}"
+            }
+        },
+        {
+            "id": "01959dc4c73a57754697e3c7ca0902d2",
+            "type": "function",
+            "function": {
+                "name": "natural_ground_terrain",
+                "arguments": "{\"terrain\": \"previous_terrain\", \"scale\": 10.0, \"octaves\": 6, \"persistence\": 0.1, \"lacunarity\": 1.0, \"height_multiplier\": 1.0}"
+            }
+        },
+        {
+            "id": "01959dc4c73a3c1ee41017c9b4bab51f",
+            "type": "function",
+            "function": {
+                "name": "discrete_obstacles_terrain",
+                "arguments": "{\"terrain\": \"previous_terrain\", \"max_height\": 2.0, \"min_size\": 0.5, \"max_size\": 2.5, \"num_rects\": 4, \"platform_size\": 1.5}"
+            }
+        },
+        {
+            "id": "01959dc4c73a9567660e18ddf3fb71a8",
+            "type": "function",
+            "function": {
+                "name": "wave_terrain",
+                "arguments": "{\"terrain\": \"previous_terrain\", \"num_waves\": 3, \"amplitude\": 0.4}"
+            }
+        },
+        {
+            "id": "01959dc4c73add98ad3989e400841bdf",
+            "type": "function",
+            "function": {
+                "name": "pillars_terrain",
+                "arguments": "{\"terrain\": \"previous_terrain\", \"num_pillars\": 5, \"max_pillar_size\": 2.5, \"pillar_gap\": 1.2, \"step_height\": 0.8}"
+            }
+        }
+    ]
+}

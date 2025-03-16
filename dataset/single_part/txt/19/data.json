@@ -1,0 +1,61 @@
+{
+    "scene_description": "**The scene depicts a small fishing village with docks and boats. The terrain can be divided into four parts:**\n    1. **Docks**: Flat, wooden platforms extending over the water.\n    2. **Boats**: Small, wooden vessels tied to the docks.\n    3. **Village Houses**: Small, quaint homes near the water.\n    4. **Water**: A calm, flat body of water with gentle waves.",
+    "tool_calls": [
+        {
+            "id": "01959dc28952b4491c68f90497241698",
+            "type": "function",
+            "function": {
+                "name": "flat_ground_terrain",
+                "arguments": "{\"terrain\": \"init_terrain\", \"height\": 0.2}"
+            }
+        },
+        {
+            "id": "01959dc28952984278c8ff3e4d846495",
+            "type": "function",
+            "function": {
+                "name": "flat_ground_terrain",
+                "arguments": "{\"terrain\": \"previous_terrain\", \"height\": 0.2}"
+            }
+        },
+        {
+            "id": "01959dc28952d4a45c5f324a325bb693",
+            "type": "function",
+            "function": {
+                "name": "natural_ground_terrain",
+                "arguments": "{\"terrain\": \"previous_terrain\", \"scale\": 10.0, \"octaves\": 6, \"persistence\": 0.1, \"lacunarity\": 1, \"height_multiplier\": 1}"
+            }
+        },
+        {
+            "id": "01959dc28952e24757c98d984e1e972b",
+            "type": "function",
+            "function": {
+                "name": "generate_river_terrain",
+                "arguments": "{\"terrain\": \"previous_terrain\", \"river_width\": 4, \"river_depth\": 1, \"river_path\": \"[[10.0, 10.0], [15.0, 15.0]]\", \"bank_height\": 0.2, \"smoothness\": 1}"
+            }
+        },
+        {
+            "id": "01959dc28952e1e3cf96cff5cb6fc21b",
+            "type": "function",
+            "function": {
+                "name": "random_uniform_terrain",
+                "arguments": "{\"terrain\": \"previous_terrain\", \"min_height\": -0.1, \"max_height\": 0.1, \"step\": 1, \"downsampled_scale\": 1}"
+            }
+        },
+        {
+            "id": "01959dc289528cb9f9d676cdce4ad796",
+            "type": "function",
+            "function": {
+                "name": "sloped_terrain",
+                "arguments": "{\"terrain\": \"previous_terrain\", \"slope\": 0.2}"
+            }
+        },
+        {
+            "id": "01959dc28952ba73479bf6cebdb191ac",
+            "type": "function",
+            "function": {
+                "name": "pyramid_sloped_terrain",
+                "arguments": "{\"terrain\": \"previous_terrain\", \"slope\": 0.2, \"platform_size\": 1}"
+            }
+        }
+    ]
+}

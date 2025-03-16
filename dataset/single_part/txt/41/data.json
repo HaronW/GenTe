@@ -1,0 +1,45 @@
+{
+    "scene_description": "**The scene depicts a small village with a central fountain and surrounding houses. The terrain can be divided into four parts:**\n    1. **Fountain**: A central water feature with a circular base.\n    2. **Paved Square**: Flat, smooth stone tiles covering the ground.\n    3. **Houses**: Small, quaint homes with colorful facades.\n    4. **Streetlights**: Tall, metal poles with glowing lights.",
+    "tool_calls": [
+        {
+            "id": "01959dc179377b09e759557a4eb2c87e",
+            "type": "function",
+            "function": {
+                "name": "flat_ground_terrain",
+                "arguments": "{\"terrain\": \"init_terrain\", \"height\": 0.2}"
+            }
+        },
+        {
+            "id": "01959dc1793745d08d79bb74dc5ba492",
+            "type": "function",
+            "function": {
+                "name": "natural_ground_terrain",
+                "arguments": "{\"terrain\": \"previous_terrain\", \"scale\": 10.0, \"octaves\": 6, \"persistence\": 0.1, \"lacunarity\": 1, \"height_multiplier\": 1}"
+            }
+        },
+        {
+            "id": "01959dc17937c878b84fa0b9b90c51c0",
+            "type": "function",
+            "function": {
+                "name": "discrete_obstacles_terrain",
+                "arguments": "{\"terrain\": \"previous_terrain\", \"max_height\": 2.0, \"min_size\": 0.4, \"max_size\": 2.0, \"num_rects\": 3, \"platform_size\": 1}"
+            }
+        },
+        {
+            "id": "01959dc179371bf48762a2964c54c7ac",
+            "type": "function",
+            "function": {
+                "name": "wave_terrain",
+                "arguments": "{\"terrain\": \"previous_terrain\", \"num_waves\": 2, \"amplitude\": 0.3}"
+            }
+        },
+        {
+            "id": "01959dc1793737d81b6bab35c68384fe",
+            "type": "function",
+            "function": {
+                "name": "pillars_terrain",
+                "arguments": "{\"terrain\": \"previous_terrain\", \"num_pillars\": 5, \"max_pillar_size\": 1.5, \"pillar_gap\": 1.0, \"step_height\": 0.5}"
+            }
+        }
+    ]
+}

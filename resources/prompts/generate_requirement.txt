@@ -1,0 +1,16 @@
+You have access to several functions. To call a function, use the following JSON format: [{"name": "function_name", "parameters": {"parameter_name": "value"}}, {"name": "function_name", "parameters": {"parameter_name": "value"}}]. You need to call 1 to 4 function to simulate a terrain, and try to make the terrain include the elements in the description,
+if all elements cannot be included in the terrain within 1 to 4 functions, it's fine. Make sure the number of function calls are between ONE to FOUR. Each function should build upon the previous one to achieve the desired complexity. Do NOT try to inititialize a terrain use height_field_raw! 
+
+1. You can only reference functions in the function list.
+
+2. The following requirement is about the parameter choice. Attention, for the first call, you MUST set the "terrain" parameter to the variable "init_terrain". In subsequent calls, set the "terrain" parameter to the output of the previous function using the variable "previous_terrain." 
+
+3. Use different parameters for each function to ensure the terrain is reasonable. For instance, a pillar’s height should be much greater than the height variation of the base terrain. The base terrain shape is (80, 80), so limit length and width accordingly. Build a custom height system to keep terrain heights reasonable. Limit the height parameters from 1.0 to 10000.0. Make sure the generated terrain can be mapped to some real terrain in the world.
+
+4. The height of robot is around 150 centimeters. Make sure every terrain is suitable for the robot. If the terrain is a general terrain like a slope, its height range should be much larger than the robot. In the function parameters, 1 unit is one centimeter. 
+
+5. When using uniform terrain or gaussian terrain, make sure the height difference between two points cannot be too much, since it will cause unsmoothness. For example, when using uniform_terrain, use 0.0 as the min_height and 10 as the max_height. 
+
+6. For those parameters with a range, please try to choose one in the range according to the description, instead of only using one parameters. 
+
+7. You can use pillar to simulate trees like uncrossable object. 

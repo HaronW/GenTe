@@ -1,0 +1,21 @@
+{
+    "scene_description": "The image depicts a coastal scene with a dynamic ocean and rocky shore. The terrain can be divided into four parts:\n\n1. **Foreground Rocks**: This section features several large, irregularly shaped rocks partially submerged in the water. The height varies significantly, with some rocks protruding above the water surface.\n\n2. **Shallow Water**: Surrounding the rocks, there is shallow water with gentle waves lapping against the shore. The depth gradually increases moving away from the shore.\n\n3. **Ocean Waves**: Further out, the ocean is characterized by larger, more powerful waves breaking towards the shore. The wave height and frequency increase as you move deeper into the ocean.\n\n4. **Background Horizon**: The horizon shows a calm sea extending to the sky, with no significant elevation changes.\n\nTo generate this terrain using the provided functions, you can:\n\n1. Use `discrete_obstacles_terrain` for the foreground rocks.\n2. Implement `generate_river_terrain` for the shallow water area.\n3. Apply `wave_terrain` for the ocean waves.\n4. Keep the background horizon as a flat ground using `flat_ground_terrain`.",
+    "tool_calls": [
+        {
+            "id": "01959d8ab6529030227af502962f2f87",
+            "type": "function",
+            "function": {
+                "name": "discrete_obstacles_terrain",
+                "arguments": "{\"max_height\": 2.0, \"min_size\": 0.4, \"max_size\": 2.0, \"num_rects\": 3, \"platform_size\": 1.0, \"terrain\": \"init_terrain\"}"
+            }
+        },
+        {
+            "id": "01959d8ab652b4cfd7c647ee6040c584",
+            "type": "function",
+            "function": {
+                "name": "generate_river_terrain",
+                "arguments": "{\"bank_height\": 0.2, \"river_depth\": 1.0, \"river_path\": \"[[10.0, 10.0], [15.0, 15.0]]\", \"river_width\": 4.0, \"smoothness\": 1.0, \"terrain\": \"[[1.2, 1.2], [1.2, 1.2]]\"}"
+            }
+        }
+    ]
+}

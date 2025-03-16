@@ -1,0 +1,300 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "flat_ground_terrain",
+      "description": "Generate a flat terrain section with specified height.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "terrain": {"$ref": "#/$defs/SubTerrain"},
+          "height": {
+            "type": "float",
+            "description": "Height value to set for the terrain part, generally from 0.2 - 0.5"
+          }
+        },
+        "required": ["terrain", "height"]
+      },
+      "returns": {"$ref": "#/$defs/SubTerrain"}
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "natural_ground_terrain",
+      "description": "Generate a natural terrain with elevation variations using noise.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "terrain": {"$ref": "#/$defs/SubTerrain"},
+          "scale": {
+            "type": "float",
+            "description": "Frequency of the noise (higher value = more detail). Default: 10.0"
+          },
+          "octaves": {
+            "type": "integer",
+            "description": "Number of noise layers to combine. Default: 6"
+          },
+          "persistence": {
+            "type": "float",
+            "description": "Amplitude multiplier for each octave. Default: 0.1"
+          },
+          "lacunarity": {
+            "type": "float",
+            "description": "Frequency multiplier for each octave. Default: 1.0"
+          },
+          "height_multiplier": {
+            "type": "float",
+            "description": "Scales the overall height of the terrain. Default: 1.0"
+          }
+        },
+        "required": ["terrain"]
+      },
+      "returns": {"$ref": "#/$defs/SubTerrain"}
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "generate_river_terrain",
+      "description": "Generate a river path on a terrain section.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "terrain": {"$ref": "#/$defs/SubTerrain"},
+          "river_width": {
+            "type": "float",
+            "description": "River width in meters"
+          },
+          "river_depth": {
+            "type": "float",
+            "description": "River depth below surrounding terrain"
+          },
+          "river_path": {
+            "type": "array",
+            "items": {"type": "array", "items": {"type": "number"}, "minItems": 2},
+            "description": "River centerline coordinates. Default: [[10.0, 15.0], [15.0, 20.0]]"
+          },
+          "bank_height": {
+            "type": "float",
+            "description": "Bank height relative to river bottom"
+          },
+          "smoothness": {
+            "type": "float",
+            "description": "Transition smoothness. Default: 1.0"
+          }
+        },
+        "required": ["terrain", "river_width", "river_depth", "bank_height"]
+      },
+      "returns": {"$ref": "#/$defs/SubTerrain"}
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "random_uniform_terrain",
+      "description": "Generate uniform random height values for a terrain section.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "terrain": {"$ref": "#/$defs/SubTerrain"},
+          "min_height": {
+            "type": "float",
+            "description": "Minimum height value"
+          },
+          "max_height": {
+            "type": "float",
+            "description": "Maximum height value"
+          },
+          "step": {
+            "type": "float",
+            "description": "Minimum height difference. Default: 1"
+          },
+          "downsampled_scale": {
+            "type": "float",
+            "description": "Sampling scale before interpolation"
+          }
+        },
+        "required": ["terrain", "min_height", "max_height"]
+      },
+      "returns": {"$ref": "#/$defs/SubTerrain"}
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "sloped_terrain",
+      "description": "Create a sloped terrain section.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "terrain": {"$ref": "#/$defs/SubTerrain"},
+          "slope": {
+            "type": "integer",
+            "description": "Slope value (positive), around 0.05 - 0.15"
+          }
+        },
+        "required": ["terrain", "slope"]
+      },
+      "returns": {"$ref": "#/$defs/SubTerrain"}
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "pyramid_sloped_terrain",
+      "description": "Generate a pyramid-shaped sloped terrain with central platform.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "terrain": {"$ref": "#/$defs/SubTerrain"},
+          "slope": {
+            "type": "integer",
+            "description": "Slope value"
+          },
+          "platform_size": {
+            "type": "float",
+            "description": "Central platform size in meters"
+          }
+        },
+        "required": ["terrain", "slope"]
+      },
+      "returns": {"$ref": "#/$defs/SubTerrain"}
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "discrete_obstacles_terrain",
+      "description": "Add discrete rectangular obstacles to a terrain section.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "terrain": {"$ref": "#/$defs/SubTerrain"},
+          "max_height": {
+            "type": "float",
+            "description": "Obstacle height range [max/2, max]"
+          },
+          "min_size": {
+            "type": "float",
+            "description": "Minimum obstacle size"
+          },
+          "max_size": {
+            "type": "float",
+            "description": "Maximum obstacle size"
+          },
+          "num_rects": {
+            "type": "integer",
+            "description": "Number of obstacles"
+          },
+          "platform_size": {
+            "type": "float",
+            "description": "Central platform size"
+          }
+        },
+        "required": ["terrain", "max_height", "min_size", "max_size", "num_rects"]
+      },
+      "returns": {"$ref": "#/$defs/SubTerrain"}
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "wave_terrain",
+      "description": "Generate wavy terrain patterns.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "terrain": {"$ref": "#/$defs/SubTerrain"},
+          "num_waves": {
+            "type": "integer",
+            "description": "Number of sine waves"
+          }
+        },
+        "required": ["terrain", "num_waves"]
+      },
+      "returns": {"$ref": "#/$defs/SubTerrain"}
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "stairs_terrain",
+      "description": "Create stair-step terrain features.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "terrain": {"$ref": "#/$defs/SubTerrain"},
+          "step_width": {
+            "type": "float",
+            "description": "Step width in meters"
+          },
+          "step_height": {
+            "type": "float",
+            "description": "Step height in meters"
+          }
+        },
+        "required": ["terrain", "step_width", "step_height"]
+      },
+      "returns": {"$ref": "#/$defs/SubTerrain"}
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "gap_terrain",
+      "description": "Create a gap (trench) in the terrain center with surrounding platform.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "terrain": {"$ref": "#/$defs/SubTerrain"},
+          "gap_size": {
+            "type": "float",
+            "description": "Gap size in meters"
+          },
+          "platform_size": {
+            "type": "float",
+            "description": "Platform size in meters. Default: 1.0"
+          },
+          "depth": {
+            "type": "integer",
+            "description": "Depth of the gap. Default: 1000"
+          }
+        },
+        "required": ["terrain", "gap_size"]
+      },
+      "returns": {"$ref": "#/$defs/SubTerrain"}
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "pillars_terrain",
+      "description": "Generate random pillars on the terrain.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "terrain": {"$ref": "#/$defs/SubTerrain"},
+          "num_pillars": {
+            "type": "integer",
+            "description": "Number of pillars"
+          },
+          "max_pillar_size": {
+            "type": "float",
+            "description": "Maximum pillar size"
+          },
+          "pillar_gap": {
+            "type": "float",
+            "description": "Gap between pillars"
+          },
+          "step_height": {
+            "type": "float",
+            "description": "Pillar base height"
+          }
+        },
+        "required": ["terrain", "num_pillars", "max_pillar_size"]
+      },
+      "returns": {"$ref": "#/$defs/SubTerrain"}
+    }
+  }
+]

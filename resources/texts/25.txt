@@ -1,0 +1,5 @@
+**The scene depicts a small pond with lily pads and surrounding reeds. The terrain can be divided into four parts:**
+    1. **Pond**: A calm, flat body of water with lily pads.
+    2. **Lily Pads**: Flat, green leaves floating on the water.
+    3. **Reeds**: Tall, thin plants growing along the shore.
+    4. **Grassy Shore**: Flat, green grass surrounding the pond.

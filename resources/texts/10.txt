@@ -1,0 +1,5 @@
+**The scene depicts a small village with cobblestone streets and thatched-roof houses. The terrain can be divided into four parts:**
+    1. **Cobblestone Streets**: Uneven, stone-paved roads.
+    2. **Thatched-Roof Houses**: Small, quaint homes with straw roofs.
+    3. **Village Green**: A flat, grassy area in the center of the village.
+    4. **Wooden Fences**: Low, wooden barriers around the houses.

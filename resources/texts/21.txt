@@ -1,0 +1,5 @@
+**The scene depicts a quiet library with bookshelves and reading tables. The terrain can be divided into four parts:**
+    1. **Bookshelves**: Tall, wooden structures filled with books.
+    2. **Reading Tables**: Flat, wooden tables with chairs.
+    3. **Carpeted Floor**: Flat, soft carpet covering the ground.
+    4. **Windows**: Large, glass windows letting in natural light.

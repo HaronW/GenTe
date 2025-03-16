@@ -1,0 +1,53 @@
+{
+    "scene_description": "**The scene depicts a small town with a main street and surrounding houses. The terrain can be divided into four parts:**\n    1. **Main Street**: Flat, paved road with painted lines.\n    2. **Houses**: Small, single-family homes with front yards.\n    3. **Sidewalks**: Flat, paved paths running along the street.\n    4. **Streetlights**: Tall, metal poles with glowing lights.",
+    "tool_calls": [
+        {
+            "id": "01959dc53eb6aa61a09880126b61c25b",
+            "type": "function",
+            "function": {
+                "name": "flat_ground_terrain",
+                "arguments": "{\"terrain\": \"init_terrain\", \"height\": 0.2}"
+            }
+        },
+        {
+            "id": "01959dc53eb6bc0a486063053be2ff62",
+            "type": "function",
+            "function": {
+                "name": "natural_ground_terrain",
+                "arguments": "{\"terrain\": \"previous_terrain\", \"scale\": 10.0, \"octaves\": 6, \"persistence\": 0.1, \"lacunarity\": 1, \"height_multiplier\": 1}"
+            }
+        },
+        {
+            "id": "01959dc53eb60707f2730e5c3fe9f7a5",
+            "type": "function",
+            "function": {
+                "name": "generate_river_terrain",
+                "arguments": "{\"terrain\": \"previous_terrain\", \"river_width\": 4.0, \"river_depth\": 1.0, \"river_path\": \"[[10.0, 10.0], [15.0, 15.0]]\", \"bank_height\": 0.2, \"smoothness\": 1}"
+            }
+        },
+        {
+            "id": "01959dc53eb6dc9be15774d502a445ca",
+            "type": "function",
+            "function": {
+                "name": "random_uniform_terrain",
+                "arguments": "{\"terrain\": \"previous_terrain\", \"min_height\": -0.3, \"max_height\": 0.3, \"step\": 1, \"downsampled_scale\": 1}"
+            }
+        },
+        {
+            "id": "01959dc53eb6bc043c4e53a4a738d0d5",
+            "type": "function",
+            "function": {
+                "name": "sloped_terrain",
+                "arguments": "{\"terrain\": \"previous_terrain\", \"slope\": 0.3}"
+            }
+        },
+        {
+            "id": "01959dc53eb69614fb908d7fd4dd4991",
+            "type": "function",
+            "function": {
+                "name": "pyramid_sloped_terrain",
+                "arguments": "{\"terrain\": \"previous_terrain\", \"slope\": 0.3, \"platform_size\": 2}"
+            }
+        }
+    ]
+}

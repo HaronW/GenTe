@@ -1,0 +1,45 @@
+{
+    "scene_description": "**The scene depicts a quiet library with bookshelves and reading tables. The terrain can be divided into four parts:**\n    1. **Bookshelves**: Tall, wooden structures filled with books.\n    2. **Reading Tables**: Flat, wooden tables with chairs.\n    3. **Carpeted Floor**: Flat, soft carpet covering the ground.\n    4. **Windows**: Large, glass windows letting in natural light.",
+    "tool_calls": [
+        {
+            "id": "01959dc2d78ec514873788359db1e6f1",
+            "type": "function",
+            "function": {
+                "name": "flat_ground_terrain",
+                "arguments": "{\"terrain\": \"init_terrain\", \"height\": 0.2}"
+            }
+        },
+        {
+            "id": "01959dc2d78e14870531f56e11cde102",
+            "type": "function",
+            "function": {
+                "name": "sloped_terrain",
+                "arguments": "{\"terrain\": \"previous_terrain\", \"slope\": 0.1}"
+            }
+        },
+        {
+            "id": "01959dc2d78eca2adcdef943b10e2e83",
+            "type": "function",
+            "function": {
+                "name": "discrete_obstacles_terrain",
+                "arguments": "{\"terrain\": \"previous_terrain\", \"max_height\": 2.0, \"min_size\": 0.4, \"max_size\": 2.0, \"num_rects\": 3, \"platform_size\": 1.0}"
+            }
+        },
+        {
+            "id": "01959dc2d78efe798ea47342b0e17edc",
+            "type": "function",
+            "function": {
+                "name": "wave_terrain",
+                "arguments": "{\"terrain\": \"previous_terrain\", \"num_waves\": 2, \"amplitude\": 0.3}"
+            }
+        },
+        {
+            "id": "01959dc2d78e91ab0e83281a7f767d2f",
+            "type": "function",
+            "function": {
+                "name": "pillars_terrain",
+                "arguments": "{\"terrain\": \"previous_terrain\", \"num_pillars\": 5, \"max_pillar_size\": 1.5, \"pillar_gap\": 1.0, \"step_height\": 0.1}"
+            }
+        }
+    ]
+}

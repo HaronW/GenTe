@@ -1,0 +1,5 @@
+**The scene depicts a small town with a main street and surrounding houses. The terrain can be divided into four parts:**
+    1. **Main Street**: Flat, paved road with painted lines.
+    2. **Houses**: Small, single-family homes with front yards.
+    3. **Sidewalks**: Flat, paved paths running along the street.
+    4. **Streetlights**: Tall, metal poles with glowing lights.

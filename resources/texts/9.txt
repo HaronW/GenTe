@@ -1,0 +1,5 @@
+**The scene depicts a coastal cliff with a lighthouse. The terrain can be divided into four parts:**
+   1. **Cliff Edge**: A steep, rocky drop into the ocean.
+   2. **Lighthouse**: A tall, cylindrical structure with a light on top.
+   3. **Grassy Cliff Top**: Flat, grassy area with wildflowers.
+   4. **Ocean**: A vast, open body of water with waves crashing against the cliff.

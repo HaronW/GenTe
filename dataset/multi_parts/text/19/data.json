@@ -1,0 +1,53 @@
+{
+    "scene_description": "**The scene depicts a small fishing village with docks and boats. The terrain can be divided into four parts:**\n    1. **Docks**: Flat, wooden platforms extending over the water.\n    2. **Boats**: Small, wooden vessels tied to the docks.\n    3. **Village Houses**: Small, quaint homes near the water.\n    4. **Water**: A calm, flat body of water with gentle waves.",
+    "tool_calls": [
+        {
+            "id": "01959e56bcdb9143bc631ca2b14eb681",
+            "type": "function",
+            "function": {
+                "name": "flat_ground_terrain",
+                "arguments": "{\"terrain\": \"init_terrain\", \"height\": 0.2}"
+            }
+        },
+        {
+            "id": "01959e56bcdb1949c593b4c32c74be24",
+            "type": "function",
+            "function": {
+                "name": "flat_ground_terrain",
+                "arguments": "{\"terrain\": \"previous_terrain\", \"height\": 0.2}"
+            }
+        },
+        {
+            "id": "01959e56bcdbb1e74883b2633705b46e",
+            "type": "function",
+            "function": {
+                "name": "generate_river_terrain",
+                "arguments": "{\"terrain\": \"previous_terrain\", \"river_width\": 4, \"river_depth\": 1, \"river_path\": \"[[10, 10], [15, 15]]\", \"bank_height\": 0.2, \"smoothness\": 1, \"part\": 3}"
+            }
+        },
+        {
+            "id": "01959e56bcdb03b0c30d8d57cfd03cc4",
+            "type": "function",
+            "function": {
+                "name": "random_uniform_terrain",
+                "arguments": "{\"terrain\": \"previous_terrain\", \"min_height\": -0.1, \"max_height\": 0.1, \"step\": 1, \"downsampled_scale\": 1, \"part\": 4}"
+            }
+        },
+        {
+            "id": "01959e56bcdb6997d68380ec48382035",
+            "type": "function",
+            "function": {
+                "name": "sloped_terrain",
+                "arguments": "{\"terrain\": \"previous_terrain\", \"slope\": 0.2, \"part\": 1}"
+            }
+        },
+        {
+            "id": "01959e56bcdb0928851abe7ffc8dd4ac",
+            "type": "function",
+            "function": {
+                "name": "pyramid_sloped_terrain",
+                "arguments": "{\"terrain\": \"previous_terrain\", \"slope\": 0.2, \"platform_size\": 1, \"part\":2}"
+            }
+        }
+    ]
+}

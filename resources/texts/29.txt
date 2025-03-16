@@ -1,0 +1,5 @@
+**The scene depicts a small town square with a clock tower and surrounding shops. The terrain can be divided into four parts:**
+    1. **Clock Tower**: A tall, stone structure with a clock face.
+    2. **Paved Square**: Flat, smooth stone tiles covering the ground.
+    3. **Surrounding Shops**: Small, quaint buildings with colorful facades.
+    4. **Streetlights**: Tall, metal poles with glowing lights.

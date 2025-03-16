@@ -1,0 +1,5 @@
+**The scene depicts a modern art gallery with white walls and large windows. The terrain can be divided into four parts:**
+    1. **White Walls**: Flat, smooth walls with artwork hanging.
+    2. **Large Windows**: Tall, glass windows letting in natural light.
+    3. **Polished Floor**: Flat, shiny surface covering the ground.
+    4. **Exhibits**: Various sculptures and installations on display.

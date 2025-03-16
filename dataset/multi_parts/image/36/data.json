@@ -1,0 +1,45 @@
+{
+    "scene_description": "The scene depicts a coastal landscape with a rocky beach and a steep cliff. The terrain can be divided into four parts:\n\n1. **Beach**: A flat, rocky shoreline with small stones and pebbles.\n2. **Cliff Base**: A sloped area transitioning from the beach to the cliff, with scattered rocks and uneven ground.\n3. **Cliff**: A steep, elevated section with a significant height difference compared to the beach.\n4. **Skyline**: A flat, distant horizon where the sea meets the sky.\n\nTo generate this terrain in Isaac Gym, you can use the following functions:\n\n1. **flat_ground_terrain** for the beach.\n2. **sloped_terrain** for the cliff base.\n3. **pyramid_sloped_terrain** for the cliff.\n4. **generate_river_terrain** for the shoreline where the sea meets the beach.\n\nThese functions will help create a realistic and varied terrain for training robots in natural coastal environments.",
+    "tool_calls": [
+        {
+            "id": "01959e6dc107dbe663dfc5fa47c4eb26",
+            "type": "function",
+            "function": {
+                "name": "flat_ground_terrain",
+                "arguments": "{\"terrain\": \"init_terrain\", \"height\": 0.0, \"part\": 1}"
+            }
+        },
+        {
+            "id": "01959e6dc10773f8f4257cc0350eec3f",
+            "type": "function",
+            "function": {
+                "name": "sloped_terrain",
+                "arguments": "{\"terrain\": \"previous_terrain\", \"slope\": 0.1, \"part\": 1}"
+            }
+        },
+        {
+            "id": "01959e6dc107999057946fa4206e2d25",
+            "type": "function",
+            "function": {
+                "name": "pyramid_sloped_terrain",
+                "arguments": "{\"terrain\": \"previous_terrain\", \"slope\": 0.2, \"platform_size\": 1.0, \"part\": 2}"
+            }
+        },
+        {
+            "id": "01959e6dc1073ca55a14513635d74e4b",
+            "type": "function",
+            "function": {
+                "name": "generate_river_terrain",
+                "arguments": "{\"terrain\": \"previous_terrain\", \"river_width\": 3.5, \"river_depth\": 0.5, \"river_path\": \"[[10.0, 10.0], [15.0, 15.0]]\", \"bank_height\": 0.2, \"smoothness\": 1.0, \"part\": 3}"
+            }
+        },
+        {
+            "id": "01959e6dc1074b290a645c08fde99124",
+            "type": "function",
+            "function": {
+                "name": "random_uniform_terrain",
+                "arguments": "{\"terrain\": \"previous_terrain\", \"min_height\": -0.3, \"max_height\": 0.3, \"step\": 0.1, \"downsampled_scale\": 1.5, \"part\":4}"
+            }
+        }
+    ]
+}

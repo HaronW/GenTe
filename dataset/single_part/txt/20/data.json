@@ -1,0 +1,53 @@
+{
+    "scene_description": "**The scene depicts a vast desert with sand dunes and a small oasis. The terrain can be divided into four parts:**\n    1. **Sand Dunes**: Rolling hills of soft, golden sand.\n    2. **Oasis**: A small, flat area with water and palm trees.\n    3. **Rocky Outcrops**: Jagged rocks scattered across the desert.\n    4. **Distant Horizon**: Flat, endless sand stretching to the horizon.",
+    "tool_calls": [
+        {
+            "id": "01959dc64b9b1e62398567ea80d7b594",
+            "type": "function",
+            "function": {
+                "name": "flat_ground_terrain",
+                "arguments": "{\"terrain\": \"init_terrain\", \"height\": 0.3}"
+            }
+        },
+        {
+            "id": "01959dc64b9bf1cf1245694ee8fb2da5",
+            "type": "function",
+            "function": {
+                "name": "natural_ground_terrain",
+                "arguments": "{\"terrain\": \"previous_terrain\", \"scale\": 10.0, \"octaves\": 6, \"persistence\": 0.1, \"lacunarity\": 1, \"height_multiplier\": 1}"
+            }
+        },
+        {
+            "id": "01959dc64b9b5325fa7a806bee0e7c53",
+            "type": "function",
+            "function": {
+                "name": "discrete_obstacles_terrain",
+                "arguments": "{\"terrain\": \"previous_terrain\", \"max_height\": 2.0, \"min_size\": 0.5, \"max_size\": 2.0, \"num_rects\": 4, \"platform_size\": 1}"
+            }
+        },
+        {
+            "id": "01959dc64b9b33889ebe87166185f4bd",
+            "type": "function",
+            "function": {
+                "name": "pillars_terrain",
+                "arguments": "{\"terrain\": \"previous_terrain\", \"num_pillars\": 5, \"max_pillar_size\": 2.5, \"pillar_gap\": 1.5, \"step_height\": 0.8}"
+            }
+        },
+        {
+            "id": "01959dc64b9b58b43b95a259de22f99b",
+            "type": "function",
+            "function": {
+                "name": "wave_terrain",
+                "arguments": "{\"terrain\": \"previous_terrain\", \"num_waves\": 3, \"amplitude\": 0.4}"
+            }
+        },
+        {
+            "id": "01959dc64b9bf99b7b54413f3d5de4a3",
+            "type": "function",
+            "function": {
+                "name": "stairs_terrain",
+                "arguments": "{\"terrain\": \"previous_terrain\", \"step_width\": 0.6, \"step_height\": 0.3}"
+            }
+        }
+    ]
+}

@@ -1,0 +1,45 @@
+{
+    "scene_description": "**The scene depicts a bustling market street with stalls and shoppers. The terrain can be divided into four parts:**\n    1. **Market Stalls**: Small, temporary structures with goods on display.\n    2. **Crowded Street**: Flat, paved road filled with people.\n    3. **Building Facades**: Tall, colorful buildings with open windows.\n    4. **Street Vendors**: Small carts and tables with food and merchandise.",
+    "tool_calls": [
+        {
+            "id": "01959dc5041f6a3ded8fcfc59a6e4db1",
+            "type": "function",
+            "function": {
+                "name": "flat_ground_terrain",
+                "arguments": "{\"terrain\": \"init_terrain\", \"height\": 0.2}"
+            }
+        },
+        {
+            "id": "01959dc5041fa79b13fbf2870de87bd3",
+            "type": "function",
+            "function": {
+                "name": "sloped_terrain",
+                "arguments": "{\"terrain\": \"previous_terrain\", \"slope\": 0.1}"
+            }
+        },
+        {
+            "id": "01959dc5041ff1b09fc581ae2ed9465d",
+            "type": "function",
+            "function": {
+                "name": "discrete_obstacles_terrain",
+                "arguments": "{\"terrain\": \"previous_terrain\", \"max_height\": 2.0, \"min_size\": 0.4, \"max_size\": 2.0, \"num_rects\": 3, \"platform_size\": 1.0}"
+            }
+        },
+        {
+            "id": "01959dc5041f733518795ea036e01cb0",
+            "type": "function",
+            "function": {
+                "name": "natural_ground_terrain",
+                "arguments": "{\"terrain\": \"previous_terrain\", \"scale\": 10.0, \"octaves\": 6, \"persistence\": 0.1, \"lacunarity\": 1.0, \"height_multiplier\": 1.0}"
+            }
+        },
+        {
+            "id": "01959dc5041fb444d3bdbcfd6d7a78b0",
+            "type": "function",
+            "function": {
+                "name": "pillars_terrain",
+                "arguments": "{\"terrain\": \"previous_terrain\", \"num_pillars\": 5, \"max_pillar_size\": 2.5, \"pillar_gap\": 1.5, \"step_height\": 0.5}"
+            }
+        }
+    ]
+}

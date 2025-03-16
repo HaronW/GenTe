@@ -1,0 +1,13 @@
+{
+    "scene_description": "**The scene depicts a quiet suburban neighborhood with houses and gardens. The terrain can be divided into four parts:**\n   1. **Houses**: Single-family homes with front yards.\n   2. **Sidewalks**: Flat, paved paths running along the street.\n   3. **Gardens**: Small, landscaped areas with flowers and shrubs.\n   4. **Street**: A smooth, asphalt road with painted lines.",
+    "tool_calls": [
+        {
+            "id": "01959e5a9ecee79bab8638be2b66e3a7",
+            "type": "function",
+            "function": {
+                "name": "flat_ground_terrain",
+                "arguments": "{\"terrain\": \"init_terrain\", \"height\": 0.2}"
+            }
+        }
+    ]
+}

@@ -1,0 +1,5 @@
+**The scene depicts a snowy forest with a frozen stream. The terrain can be divided into four parts:**
+   1. **Snow-Covered Ground**: Flat, white snow with occasional footprints.
+   2. **Frozen Stream**: A flat, icy surface with cracks and ridges.
+   3. **Tree Trunks**: Tall, snow-covered trees with bare branches.
+   4. **Snowdrifts**: Piles of snow blown against the trees.

@@ -1,0 +1,45 @@
+{
+    "scene_description": "**The scene depicts a quiet churchyard with a stone church and gravestones. The terrain can be divided into four parts:**\n    1. **Stone Church**: A tall, stone building with a steeple.\n    2. **Gravestones**: Flat, rectangular markers with inscriptions.\n    3. **Grassy Ground**: Flat, green grass covering the churchyard.\n    4. **Pathways**: Flat, gravel paths winding through the churchyard.",
+    "tool_calls": [
+        {
+            "id": "01959dc5e1e46f520d1f7d79d5bb55ae",
+            "type": "function",
+            "function": {
+                "name": "flat_ground_terrain",
+                "arguments": "{\"terrain\": \"init_terrain\", \"height\": 0.2}"
+            }
+        },
+        {
+            "id": "01959dc5e1e4ed925f7d6ef7be113423",
+            "type": "function",
+            "function": {
+                "name": "sloped_terrain",
+                "arguments": "{\"terrain\": \"previous_terrain\", \"slope\": 0.1}"
+            }
+        },
+        {
+            "id": "01959dc5e1e4db0fa35871aafcb8d2ff",
+            "type": "function",
+            "function": {
+                "name": "discrete_obstacles_terrain",
+                "arguments": "{\"terrain\": \"previous_terrain\", \"max_height\": 2.0, \"min_size\": 0.5, \"max_size\": 2.0, \"num_rects\": 5, \"platform_size\": 1.0}"
+            }
+        },
+        {
+            "id": "01959dc5e1e4028ae1d8377d6079948e",
+            "type": "function",
+            "function": {
+                "name": "wave_terrain",
+                "arguments": "{\"terrain\": \"previous_terrain\", \"num_waves\": 3, \"amplitude\": 0.2}"
+            }
+        },
+        {
+            "id": "01959dc5e1e54b77b54786735a29435e",
+            "type": "function",
+            "function": {
+                "name": "pillars_terrain",
+                "arguments": "{\"terrain\": \"previous_terrain\", \"num_pillars\": 10, \"max_pillar_size\": 1.5, \"pillar_gap\": 1.0, \"step_height\": 0.1}"
+            }
+        }
+    ]
+}

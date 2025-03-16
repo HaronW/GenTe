@@ -1,0 +1,5 @@
+**The scene depicts a quiet cemetery with gravestones and tall trees. The terrain can be divided into four parts:**
+    1. **Gravestones**: Flat, rectangular markers with inscriptions.
+    2. **Grassy Ground**: Flat, green grass covering the cemetery.
+    3. **Tall Trees**: Large, leafy trees providing shade.
+    4. **Pathways**: Flat, gravel paths winding through the cemetery.

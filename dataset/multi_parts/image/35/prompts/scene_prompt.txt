@@ -1,0 +1,12 @@
+Give a terrain description on the given image. The scene will be used to generate terrain in the isaacgym using some functions. As a result, your description should be precise and concise. Do not add too much detailed information like color or texture. Only the terrain, the height information is needed to be included in the description. In your description, choose to summarize the scene and describe the main part of the image. Do not include more than 5 terrain in a description. 
+
+Requirement: 
+1. The color, texture or material of the building or terrain does not matter. Do NOT add them in the scene description. 
+2. Make sure the scene can be implemented using following functions: [flat_ground_terrain,natural_ground_terrain,generate_river_terrain,random_uniform_terrain,sloped_terrain,pyramid_sloped_terrain,discrete_obstacles_terrain,
+        wave_terrain,stairs_terrain,pyramid_stairs_terrain,stepping_stones_terrain,pillars_terrain,gap_terrain,pit_terrain,
+    ]. 
+3. Emphasize the TERRAIN part, your scene description will be given to a llm to call functions to generate the scene. 
+4. Emphasize the variations in height between different sections. The content you generate will be utilized to create a terrain for robots to train their capability to walk on natural terrains. 
+5. The terrain is complex natural or city scenes, so the number of function calls are limited to 3 - 10 to show the fitting simulation.
+6. If the ground is not even or natural, you may indicate that the generator can use gaussian ground to simulate it. 
+7. Make sure that the scene can be divided to 4 parts, and the downstream llm will use different functions to those 4 parts. 

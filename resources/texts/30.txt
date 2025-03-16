@@ -1,0 +1,5 @@
+**The scene depicts a quiet forest clearing with a campfire and tents. The terrain can be divided into four parts:**
+    1. **Campfire**: A small, flat area with burning wood.
+    2. **Tents**: Small, fabric shelters with poles.
+    3. **Grassy Ground**: Flat, green grass covering the clearing.
+    4. **Surrounding Trees**: Tall, leafy trees forming a circle around the clearing.
