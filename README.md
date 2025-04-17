@@ -1,7 +1,7 @@
 # GenTe
 
 Code and benchmark release for paper: GenTe: Generative Real-world Terrains for General Legged Robot Locomotion Control.
-
+arXiv：https://arxiv.org/abs/2504.09997
 
 
 ## 📖 Abstract
