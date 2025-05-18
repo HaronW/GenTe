@@ -61,7 +61,7 @@ class LeggedRobotCfg(BaseConfig):
         instruct_lang = "Question: Generate a terrain that depicts a mountainous landscape with rolling hills covered in dense green vegetation. The terrain is characterized by gentle slopes and a variety of elevations."
         instruct_image_path = GenTe_resource_path + "/images/cityroad.jpeg"
 
-        load_terrain_dir = "/home/webdrag0n/webdrag0n-storage/haron/llm_bipedwalk/llm_part/mid_result/v7/buildingfield"
+        #load_terrain_dir = "/home/webdrag0n/webdrag0n-storage/haron/llm_bipedwalk/llm_part/mid_result/v7/buildingfield"
  
     
         mesh_type = 'trimesh' # "heightfield" # none, plane, heightfield or trimesh
